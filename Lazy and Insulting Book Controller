@@ -1,0 +1,46 @@
+//It doesn't really do anything.
+#include "test.h"
+#include <iostream>
+
+using namespace std;
+
+class Book {
+    int contd = 0;
+public:
+    void TurnPage(){
+        cout << "Dude, use your arms. fuck off." << endl;
+        contd = 0;
+    }
+    void OpenBook(){
+        cout << "Too heavy, do it yourself." << endl;
+        contd = 0;
+    }
+    void CloseBook(){
+        cout << "About time." << endl;
+        contd = 1;
+    }
+};
+
+int main(){
+    Book readBook;
+    int bookCtrl;
+    cout << "0 to open book, 1 to turn page, 2 to close book.";
+    do{
+        cin >> bookCtrl;
+        switch (bookCtrl){
+            case 0:
+                readBook.OpenBook();
+                break;
+            case 1:
+                readBook.TurnPage();
+                break;
+            case 2:
+                readBook.CloseBook();
+                break;
+            default:
+                cout << "Fucking dumbass. Learn to read.";
+        }
+    }while (bookCtrl < 2);
+
+    return 0;
+}
